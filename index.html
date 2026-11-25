@@ -10,71 +10,83 @@
       margin: 0;
       min-height: 100vh;
       box-sizing: border-box;
-      padding: 2.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 1.5rem 1rem;
       background: #F3EEFB;
       color: #3B2A5C;
       font-family: "LXGW WenKai Mono TC", monospace;
       text-align: center;
     }
+
+    .feuille {
+      position: relative;
+      max-width: 26rem;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 2.5rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(59, 42, 92, 0.2);
+      background:
+        repeating-linear-gradient(to bottom, transparent 0, transparent 2.4rem, #D6C8A4 2.4rem, #D6C8A4 calc(2.4rem + 1px)),
+        linear-gradient(to bottom, #F5E8C2, #FBF3DA);
+    }
+    .trous {
+      position: absolute;
+      top: 0.7rem;
+      left: 0;
+      right: 0;
+      height: 1rem;
+      background: radial-gradient(circle, #F3EEFB 0 0.4rem, transparent 0.45rem) repeat-x;
+      background-size: 2rem 1rem;
+    }
+
     h1 { font-size: 2rem; margin: 0; }
     p { margin-top: 0.5rem; }
 
-    .etagere {
-      margin-top: 2.5rem;
-      width: 100%;
-      max-width: 30rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-    .rayon {
+    .ligne {
       display: flex;
       justify-content: center;
-      align-items: flex-end;
-      gap: 2rem;
-      padding: 0 1rem;
-      border-bottom: 12px solid #B79CE0;
-      border-radius: 4px;
-      box-shadow: 0 6px 8px rgba(59, 42, 92, 0.15);
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
     .objet {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      padding-bottom: 0.8rem;
+      gap: 0.6rem;
       color: inherit;
       text-decoration: none;
+      transition: transform 0.15s;
     }
+    .objet:nth-child(odd) { transform: rotate(-4deg); }
+    .objet:nth-child(even) { transform: rotate(3deg); }
+    .objet:hover { transform: rotate(0deg) scale(1.06); }
+
     .rond {
       width: clamp(5.5rem, 28vw, 8rem);
       aspect-ratio: 1;
       border-radius: 50%;
       background: #DCCBF3;
-      border: 2px dashed #7E5BB5;
+      border: 5px solid #FFFFFF;
+      box-shadow: 0 3px 7px rgba(59, 42, 92, 0.3);
     }
     .nom { font-size: 1.1rem; }
-    .objet:hover .rond { background: #CDB5EE; }
   </style>
 </head>
 <body>
-  <h1>Ella Des Cartes</h1>
-  <p>Une géomaticienne en quête de la bonne projection</p>
+  <main class="feuille">
+    <div class="trous"></div>
+    <h1>Ella Des Cartes</h1>
+    <p>Une géomaticienne en quête de la bonne projection</p>
 
-  <main class="etagere">
-    <div class="rayon">
+    <div class="ligne">
       <a href="#" class="objet"><span class="rond"></span><span class="nom">Études</span></a>
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Tutoriels</span></a>
+      <a href="#" class="objet"><span class="rond"></span><span class="nom">Gallery</span></a>
     </div>
-    <div class="rayon">
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Synthèses</span></a>
+    <div class="ligne">
       <a href="#" class="objet"><span class="rond"></span><span class="nom">Coulisses</span></a>
     </div>
-    <div class="rayon">
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Gallery</span></a>
+    <div class="ligne">
+      <a href="#" class="objet"><span class="rond"></span><span class="nom">Tutoriels</span></a>
+      <a href="#" class="objet"><span class="rond"></span><span class="nom">Synthèses</span></a>
     </div>
   </main>
 </body>
