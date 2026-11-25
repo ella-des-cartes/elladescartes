@@ -6,12 +6,9 @@
   <title>Ella Des Cartes</title>
   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
   <style>
+    html { background: #BFA9DF; }
     body {
       margin: 0;
-      min-height: 100vh;
-      box-sizing: border-box;
-      padding: 1.5rem 1rem;
-      background: #F3EEFB;
       color: #3B2A5C;
       font-family: "LXGW WenKai Mono TC", monospace;
       text-align: center;
@@ -19,14 +16,31 @@
 
     .feuille {
       position: relative;
-      max-width: 26rem;
-      margin: 0 auto;
+      min-height: 100vh;
+      box-sizing: border-box;
       padding: 3.5rem 1.5rem 2.5rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 14px rgba(59, 42, 92, 0.2);
       background:
-        repeating-linear-gradient(to bottom, transparent 0, transparent 2.4rem, #D6C8A4 2.4rem, #D6C8A4 calc(2.4rem + 1px)),
-        linear-gradient(to bottom, #F5E8C2, #FBF3DA);
+        /* petites froissures */
+        linear-gradient(100deg, transparent 47%, rgba(255,255,255,.55) 49%, rgba(80,50,120,.20) 51%, transparent 53%) 12% 14% / 8rem 5rem no-repeat,
+        linear-gradient(75deg, transparent 47%, rgba(255,255,255,.5) 49%, rgba(80,50,120,.18) 51%, transparent 53%) 88% 30% / 7rem 6rem no-repeat,
+        linear-gradient(120deg, transparent 47%, rgba(255,255,255,.5) 49%, rgba(80,50,120,.18) 51%, transparent 53%) 25% 58% / 9rem 5rem no-repeat,
+        linear-gradient(85deg, transparent 47%, rgba(255,255,255,.5) 49%, rgba(80,50,120,.18) 51%, transparent 53%) 78% 76% / 8rem 6rem no-repeat,
+        linear-gradient(110deg, transparent 47%, rgba(255,255,255,.45) 49%, rgba(80,50,120,.16) 51%, transparent 53%) 8% 90% / 7rem 4rem no-repeat,
+        /* taches de vieillissement */
+        radial-gradient(circle 10rem at 85% 18%, rgba(140,100,170,.16), transparent),
+        radial-gradient(circle 12rem at 10% 70%, rgba(140,100,170,.14), transparent),
+        /* bords plus sombres */
+        radial-gradient(ellipse at center, transparent 50%, rgba(110,80,150,.30) 100%),
+        /* grain du papier */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.5  0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+        /* lignes du carnet */
+        repeating-linear-gradient(to bottom, transparent 0, transparent 2.4rem, #B7A3D6 2.4rem, #B7A3D6 calc(2.4rem + 1px)),
+        /* couleur du papier */
+        linear-gradient(to bottom, #E4D8F4, #D8C7EE);
+    }
+    .contenu {
+      max-width: 32rem;
+      margin: 0 auto;
     }
     .trous {
       position: absolute;
@@ -34,7 +48,7 @@
       left: 0;
       right: 0;
       height: 1rem;
-      background: radial-gradient(circle, #F3EEFB 0 0.4rem, transparent 0.45rem) repeat-x;
+      background: radial-gradient(circle, #BFA9DF 0 0.4rem, transparent 0.45rem) repeat-x;
       background-size: 2rem 1rem;
     }
 
@@ -64,7 +78,7 @@
       width: clamp(5.5rem, 28vw, 8rem);
       aspect-ratio: 1;
       border-radius: 50%;
-      background: #DCCBF3;
+      background: #C9B3EA;
       border: 5px solid #FFFFFF;
       box-shadow: 0 3px 7px rgba(59, 42, 92, 0.3);
     }
@@ -74,19 +88,21 @@
 <body>
   <main class="feuille">
     <div class="trous"></div>
-    <h1>Ella Des Cartes</h1>
-    <p>Une géomaticienne en quête de la bonne projection</p>
+    <div class="contenu">
+      <h1>Ella Des Cartes</h1>
+      <p>Une géomaticienne en quête de la bonne projection</p>
 
-    <div class="ligne">
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Études</span></a>
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Gallery</span></a>
-    </div>
-    <div class="ligne">
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Coulisses</span></a>
-    </div>
-    <div class="ligne">
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Tutoriels</span></a>
-      <a href="#" class="objet"><span class="rond"></span><span class="nom">Synthèses</span></a>
+      <div class="ligne">
+        <a href="#" class="objet"><span class="rond"></span><span class="nom">Études</span></a>
+        <a href="#" class="objet"><span class="rond"></span><span class="nom">Gallery</span></a>
+      </div>
+      <div class="ligne">
+        <a href="#" class="objet"><span class="rond"></span><span class="nom">Coulisses</span></a>
+      </div>
+      <div class="ligne">
+        <a href="#" class="objet"><span class="rond"></span><span class="nom">Tutoriels</span></a>
+        <a href="#" class="objet"><span class="rond"></span><span class="nom">Synthèses</span></a>
+      </div>
     </div>
   </main>
 </body>
