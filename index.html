@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ella Des Cartes</title>
   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
+  
   <style>
     html { background: #BFA9DF; }
     body {
@@ -77,6 +78,16 @@
       box-shadow: 0 3px 7px rgba(59, 42, 92, 0.3);
     }
     .nom { font-size: 1.1rem; }
+    .dessin {
+      width: clamp(5.5rem, 28vw, 8rem);
+      height: clamp(5.5rem, 28vw, 8rem);
+      object-fit: contain;
+      filter:
+        drop-shadow(3px 0 0 #FFFFFF)
+        drop-shadow(-3px 0 0 #FFFFFF)
+        drop-shadow(0 3px 0 #FFFFFF)
+        drop-shadow(0 -3px 0 #FFFFFF)
+        drop-shadow(0 3px 6px rgba(59, 42, 92, 0.3));
   </style>
 </head>
 <body>
@@ -87,15 +98,15 @@
       <p>Une géomaticienne en quête de la bonne projection</p>
 
       <div class="ligne">
-        <a href="#" class="objet"><span class="rond"></span><span class="nom">Études</span></a>
+       <a href="#" class="objet"><img class="dessin" src="images/etudes-1.svg" alt=""><span class="nom">Études</span></a>
         <a href="#" class="objet"><span class="rond"></span><span class="nom">Gallery</span></a>
       </div>
       <div class="ligne">
         <a href="#" class="objet"><span class="rond"></span><span class="nom">Coulisses</span></a>
       </div>
       <div class="ligne">
-        <a href="#" class="objet"><span class="rond"></span><span class="nom">Tutoriels</span></a>
-        <a href="#" class="objet"><span class="rond"></span><span class="nom">Synthèses</span></a>
+        <a href="#" class="objet"><img class="dessin" src="images/tutoriel-1.svg" alt=""><span class="nom">Tutoriels</span></a>
+        <a href="#" class="objet"><img class="dessin" src="images/synthse-1.svg" alt=""><span class="nom">Synthèses</span></a>
       </div>
     </div>
   </main>
