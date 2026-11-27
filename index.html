@@ -52,17 +52,17 @@
 
     .compo {
       margin-top: 2rem;
+      min-height: max(22rem, calc(100vh - 18rem));
+      min-height: max(22rem, calc(100svh - 18rem));
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-      grid-template-rows: auto auto;
-      column-gap: 0.5rem;
-      row-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr auto;
     }
-    .hg { grid-column: 1; grid-row: 1; align-self: start; justify-self: end; }
-    .hd { grid-column: 3; grid-row: 1; align-self: start; justify-self: start; }
-    .bg { grid-column: 1; grid-row: 2; align-self: end; justify-self: end; }
-    .bd { grid-column: 3; grid-row: 2; align-self: end; justify-self: start; }
-    .grand { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .hg { grid-column: 1; grid-row: 1; justify-self: start; margin: 0 0.5rem; }
+    .hd { grid-column: 2; grid-row: 1; justify-self: end; margin: 0 0.5rem; }
+    .bg { grid-column: 1; grid-row: 3; justify-self: start; margin: 0 0.5rem; }
+    .bd { grid-column: 2; grid-row: 3; justify-self: end; margin: 0 0.5rem; }
+    .grand { grid-column: 1 / span 2; grid-row: 2; align-self: center; justify-self: center; }
 
     .objet {
       display: flex;
@@ -96,6 +96,23 @@
         drop-shadow(0 -3px 0 #FFFFFF)
         drop-shadow(0 3px 6px rgba(59, 42, 92, 0.3));
     }
+
+    .fleche {
+      display: block;
+      margin: 1rem auto 0;
+      width: 3rem;
+      height: 4.5rem;
+      fill: none;
+      stroke: #3B2A5C;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      animation: rebond 1.6s ease-in-out infinite;
+    }
+    @keyframes rebond {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
   </style>
 </head>
 <body>
@@ -112,6 +129,11 @@
         <a href="#" class="objet bg"><img class="dessin" src="image/tutoriel-1.svg" alt=""><span class="nom">Tutoriels</span></a>
         <a href="#" class="objet bd"><img class="dessin" src="image/synthese-1.svg" alt=""><span class="nom">Synthèses</span></a>
       </div>
+
+      <svg class="fleche" viewBox="0 0 60 90" aria-hidden="true">
+        <path d="M30 4 C25 20, 35 36, 29 54 C26 63, 31 70, 31 80" />
+        <path d="M12 62 C19 69, 26 76, 31 86 C37 77, 44 69, 50 59" />
+      </svg>
     </div>
   </main>
 </body>
