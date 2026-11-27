@@ -50,12 +50,20 @@
     h1 { font-size: 2rem; margin: 0; }
     p { margin-top: 0.5rem; }
 
-    .ligne {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+    .compo {
       margin-top: 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      column-gap: 0.5rem;
+      row-gap: 1rem;
     }
+    .hg { grid-column: 1; grid-row: 1; align-self: start; justify-self: end; }
+    .hd { grid-column: 3; grid-row: 1; align-self: start; justify-self: start; }
+    .bg { grid-column: 1; grid-row: 2; align-self: end; justify-self: end; }
+    .bd { grid-column: 3; grid-row: 2; align-self: end; justify-self: start; }
+    .grand { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+
     .objet {
       display: flex;
       flex-direction: column;
@@ -69,18 +77,12 @@
     .objet:nth-child(even) { transform: rotate(3deg); }
     .objet:hover { transform: rotate(0deg) scale(1.06); }
 
-    .rond {
-      width: clamp(5.5rem, 28vw, 8rem);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: #C9B3EA;
-      border: 5px solid #FFFFFF;
-      box-shadow: 0 3px 7px rgba(59, 42, 92, 0.3);
-    }
-    .nom { font-size: 1.1rem; }
+    .nom { font-size: 0.8rem; white-space: nowrap; }
+    .grand .nom { font-size: 1.1rem; }
+
     .dessin {
-      width: clamp(4.5rem, 22vw, 6.5rem);
-      height: clamp(4.5rem, 22vw, 6.5rem);
+      width: clamp(3.5rem, 16vw, 5rem);
+      height: clamp(3.5rem, 16vw, 5rem);
       object-fit: contain;
       filter: drop-shadow(0 6px 6px rgba(59, 42, 92, 0.35));
     }
@@ -103,16 +105,12 @@
       <h1>Ella Des Cartes</h1>
       <p>Une géomaticienne en quête de la bonne projection</p>
 
-      <div class="ligne">
-        <a href="#" class="objet"><img class="dessin" src="image/gallery-1.svg" alt=""><span class="nom">Galerie</span></a>
-        <a href="#" class="objet"><img class="dessin" src="image/coulisse-1.svg" alt=""><span class="nom">Atelier</span></a>
-      </div>
-      <div class="ligne">
+      <div class="compo">
+        <a href="#" class="objet hg"><img class="dessin" src="image/gallery-1.svg" alt=""><span class="nom">Galerie</span></a>
+        <a href="#" class="objet hd"><img class="dessin" src="image/coulisse-1.svg" alt=""><span class="nom">Atelier</span></a>
         <a href="#" class="objet grand"><img class="dessin" src="image/etudes-1.svg" alt=""><span class="nom">Études</span></a>
-      </div>
-      <div class="ligne">
-        <a href="#" class="objet"><img class="dessin" src="image/tutoriel-1.svg" alt=""><span class="nom">Tutoriels</span></a>
-        <a href="#" class="objet"><img class="dessin" src="image/synthese-1.svg" alt=""><span class="nom">Synthèses</span></a>
+        <a href="#" class="objet bg"><img class="dessin" src="image/tutoriel-1.svg" alt=""><span class="nom">Tutoriels</span></a>
+        <a href="#" class="objet bd"><img class="dessin" src="image/synthese-1.svg" alt=""><span class="nom">Synthèses</span></a>
       </div>
     </div>
   </main>
